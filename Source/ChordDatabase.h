@@ -1,5 +1,7 @@
 #pragma once
 #include <JuceHeader.h>
+#include <algorithm>
+#include <cmath>
 #include <map>
 #include <vector>
 
@@ -12,6 +14,16 @@ struct Chord
     juce::String quality, symbol;
 };
 
+// One chord turned into MIDI notes. notes[0] is the bass note, the rest are the upper notes, low to high.
+struct Voiced
+{
+    int notes[8] {};
+    int count = 0;
+    int inversion = 0;
+};
+
+enum VoicingMode { voicingRoot = 0, voicingClosest = 1, voicingInversion = 2 };
+
 struct Progression
 {
     juce::String id, era, style, name, mode, roman, songs;
@@ -22,7 +34,8 @@ struct Progression
 class ChordDatabase
 {
 public:
-    static constexpr int numEras = 4;
+    static constexpr int numEras = 5;
+    static constexpr int maxChords = 16;
 
     ChordDatabase()
     {
@@ -107,6 +120,75 @@ public:
         out[n++] = bassNote;
         for (int iv : intervals (quality))
             if (n < maxNotes) out[n++] = rootNote + 12 + iv;
+        return n;
+    }
+
+    // Voices one chord. inversion >= 0 picks that inversion; inversion < 0 picks whichever
+    // inversion sits closest to the previous chord (or root position if there is none).
+    Voiced voiceChord (int key, int rootSemis, const juce::String& quality, int bassSemis,
+                       int inversion, const Voiced* previous, int octaveShift = 0) const
+    {
+        auto place = [] (int pc, int base) { return base + pc - (pc > 6 ? 12 : 0); };
+        const int rootNote = place ((key + rootSemis) % 12, 48) + octaveShift;
+        const int bassNote = bassSemis >= 0 ? place ((key + bassSemis) % 12, 36) + octaveShift : rootNote - 12;
+        auto& iv = intervals (quality);
+        const int n = juce::jlimit (1, 7, (int) iv.size());
+
+        auto build = [&] (int k, int shift, int* out)
+        {
+            for (int i = 0; i < n; ++i) out[i] = rootNote + 12 + iv[(size_t) i] + shift;
+            std::sort (out, out + n);
+            for (int i = 0; i < k; ++i) { out[0] += 12; std::sort (out, out + n); }
+        };
+
+        int best[7] {}, bestInv = 0;
+        if (inversion >= 0 || previous == nullptr || previous->count < 2)
+        {
+            bestInv = inversion >= 0 ? inversion % n : 0;
+            build (bestInv, 0, best);
+            if (best[0] >= rootNote + 12 + 7)            // higher inversions sit under the root, not above it
+                for (int i = 0; i < n; ++i) best[i] -= 12;
+        }
+        else
+        {
+            const int* prev = previous->notes + 1;
+            const int prevN = previous->count - 1;
+            double bestCost = 1.0e9;
+            for (int k = 0; k < n; ++k)
+                for (int shift : { 0, -12 })
+                {
+                    int cand[7];
+                    build (k, shift, cand);
+                    double cost = 0.5 * std::abs (cand[n - 1] - prev[prevN - 1]);
+                    for (int i = 0; i < n; ++i)
+                    {
+                        int nearest = 127;
+                        for (int j = 0; j < prevN; ++j) nearest = juce::jmin (nearest, std::abs (cand[i] - prev[j]));
+                        cost += nearest;
+                    }
+                    if (cand[0] < 50 + octaveShift) cost += 8.0;
+                    if (cand[n - 1] > 81 + octaveShift) cost += 8.0;
+                    if (cost < bestCost) { bestCost = cost; bestInv = k; std::copy (cand, cand + n, best); }
+                }
+        }
+
+        Voiced v;
+        v.inversion = bestInv;
+        v.notes[v.count++] = bassNote;
+        for (int i = 0; i < n; ++i) v.notes[v.count++] = best[i];
+        return v;
+    }
+
+    // Voices a whole progression into out[]. Returns the number of chords written.
+    int voiceProgression (const Progression& p, int key, int mode, const int* inversions, Voiced* out, int maxOut) const
+    {
+        const int n = juce::jmin (maxOut, (int) p.chords.size());
+        for (int i = 0; i < n; ++i)
+        {
+            auto& c = p.chords[(size_t) i];
+            const int inv = mode == voicingInversion ? inversions[i] : (mode == voicingClosest && i > 0 ? -1 : 0);
+            out[i] = voiceChord (key, c.root, c.quality, c.bass, inv, i > 0 ? &out[i - 1] : nullptr);
+        }
         return n;
     }
 

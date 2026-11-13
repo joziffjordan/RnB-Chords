@@ -1,6 +1,6 @@
 {
  "name": "RnB Chords progression database",
- "version": 2,
+ "version": 3,
  "notes": [
   "Chords are stored relative to the key: root and bass are semitones above the tonic (0-11).",
   "mode says whether the tonic is a major or minor key centre; minor progressions are written from the minor tonic.",
@@ -8,12 +8,21 @@
   "in_the_style_of lists artists whose era and sound the progression fits. It is a style pointer, not a claim that a specific song uses it."
  ],
  "eras": [
+  "Soul",
   "80s",
   "90s",
   "2000s",
   "Modern"
  ],
  "styles": {
+  "Soul": [
+   "Motown Sound",
+   "Southern Soul",
+   "Philly Soul",
+   "70s Smooth Soul",
+   "Funk",
+   "Jazz-Soul"
+  ],
   "80s": [
    "Quiet Storm",
    "Boogie & Synth Funk",
@@ -225,6 +234,17 @@
    3,
    6,
    10
+  ],
+  "aug": [
+   0,
+   4,
+   8
+  ],
+  "mMaj7": [
+   0,
+   3,
+   7,
+   11
   ]
  },
  "midi_trigger": {
@@ -281,6 +301,24 @@
    ]
   },
   "quality_by_era": {
+   "Soul": {
+    "white": [
+     "maj",
+     "m7",
+     "m7",
+     "maj",
+     "7",
+     "m7",
+     "m7b5"
+    ],
+    "black": [
+     "maj",
+     "maj",
+     "m7b5",
+     "maj",
+     "maj"
+    ]
+   },
    "80s": {
     "white": [
      "maj7",
@@ -356,6 +394,4203 @@
   }
  },
  "progressions": [
+  {
+   "id": "soul-001",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 01",
+   "mode": "major",
+   "roman": "I – IV",
+   "bars": 2,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-002",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 02",
+   "mode": "major",
+   "roman": "I – vi – IV – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-003",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 03",
+   "mode": "major",
+   "roman": "I – IV – V – IV",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-004",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 04",
+   "mode": "major",
+   "roman": "I – iii – IV – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "iii",
+     "root": 4,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-005",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 05",
+   "mode": "major",
+   "roman": "I – ii",
+   "bars": 2,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-006",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 06",
+   "mode": "major",
+   "roman": "I – vi – ii – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-007",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 07",
+   "mode": "major",
+   "roman": "I – I7 – IV – iv",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "iv",
+     "root": 5,
+     "quality": "m",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-008",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 08",
+   "mode": "major",
+   "roman": "I – ♭VII – IV – I",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-009",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 09",
+   "mode": "major",
+   "roman": "IV – V – I – vi",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-010",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 10",
+   "mode": "major",
+   "roman": "ii – V – I – vi",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-011",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 11",
+   "mode": "major",
+   "roman": "I – V/VII – vi – I/V – IV – I/III – ii – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "V/VII",
+     "root": 7,
+     "quality": "maj",
+     "beats": 2,
+     "bass": 11
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "I/V",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2,
+     "bass": 7
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "I/III",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2,
+     "bass": 4
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 2
+    }
+   ]
+  },
+  {
+   "id": "soul-012",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 12",
+   "mode": "major",
+   "roman": "I – IV – I – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-013",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 13",
+   "mode": "major",
+   "roman": "vi – IV – I – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-014",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 14",
+   "mode": "major",
+   "roman": "I – III7 – IV – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "III7",
+     "root": 4,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-015",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 15",
+   "mode": "major",
+   "roman": "I – ii – iii – IV",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "iii",
+     "root": 4,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-016",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 16",
+   "mode": "major",
+   "roman": "IV – I – V – I",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-017",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 17",
+   "mode": "major",
+   "roman": "I – ♭VII",
+   "bars": 2,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-018",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 18",
+   "mode": "major",
+   "roman": "V – IV – I",
+   "bars": 3,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-019",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 19",
+   "mode": "minor",
+   "roman": "i – IV",
+   "bars": 2,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-020",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 20",
+   "mode": "minor",
+   "roman": "i – ♭VII – ♭VI – V",
+   "bars": 4,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VI",
+     "root": 8,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-021",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 21",
+   "mode": "minor",
+   "roman": "i – iv",
+   "bars": 2,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "iv",
+     "root": 5,
+     "quality": "m",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-022",
+   "era": "Soul",
+   "style": "Motown Sound",
+   "name": "Motown Sound 22",
+   "mode": "minor",
+   "roman": "i – ♭III – IV",
+   "bars": 3,
+   "tempo": [
+    96,
+    128
+   ],
+   "in_the_style_of": [
+    "The Supremes",
+    "Four Tops",
+    "The Temptations",
+    "Marvin Gaye",
+    "Smokey Robinson"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "♭III",
+     "root": 3,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-023",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 01",
+   "mode": "major",
+   "roman": "I7 – IV7",
+   "bars": 2,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-024",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 02",
+   "mode": "major",
+   "roman": "I7 – IV7 – I7 – V7",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-025",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 03",
+   "mode": "major",
+   "roman": "I – III – IV – II",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "III",
+     "root": 4,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "II",
+     "root": 2,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-026",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 04",
+   "mode": "major",
+   "roman": "I – vi – IV – V7",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-027",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 05",
+   "mode": "major",
+   "roman": "I – I/III – IV – V",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I/III",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-028",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 06",
+   "mode": "major",
+   "roman": "IV7 – I7",
+   "bars": 2,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-029",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 07",
+   "mode": "major",
+   "roman": "I – ♭III – IV",
+   "bars": 3,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭III",
+     "root": 3,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-030",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 08",
+   "mode": "major",
+   "roman": "I7 – ♭VII – IV",
+   "bars": 3,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-031",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 09",
+   "mode": "major",
+   "roman": "I – IV – V7",
+   "bars": 3,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-032",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 10",
+   "mode": "major",
+   "roman": "I – iii – vi – IV",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "iii",
+     "root": 4,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-033",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 11",
+   "mode": "major",
+   "roman": "I – ♭VII – IV – ♭VII",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-034",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 12",
+   "mode": "major",
+   "roman": "I7#9 – IV9",
+   "bars": 2,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7#9",
+     "root": 0,
+     "quality": "7#9",
+     "beats": 4
+    },
+    {
+     "symbol": "IV9",
+     "root": 5,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-035",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 13",
+   "mode": "major",
+   "roman": "I – V – vi – IV",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi",
+     "root": 9,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-036",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 14",
+   "mode": "major",
+   "roman": "I – II7 – IV – I",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "II7",
+     "root": 2,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-037",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 15",
+   "mode": "major",
+   "roman": "I – V – IV – V",
+   "bars": 4,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-038",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 16",
+   "mode": "minor",
+   "roman": "i7 – IV7",
+   "bars": 2,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-039",
+   "era": "Soul",
+   "style": "Southern Soul",
+   "name": "Southern Soul 17",
+   "mode": "minor",
+   "roman": "i7 – iv7 – V7",
+   "bars": 3,
+   "tempo": [
+    70,
+    112
+   ],
+   "in_the_style_of": [
+    "Otis Redding",
+    "Aretha Franklin",
+    "Sam & Dave",
+    "Wilson Pickett",
+    "Booker T. & the M.G.s"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-040",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 01",
+   "mode": "major",
+   "roman": "Imaj7 – IVmaj7",
+   "bars": 2,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-041",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 02",
+   "mode": "major",
+   "roman": "Imaj7 – ii7 – iii7 – IVmaj7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-042",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 03",
+   "mode": "major",
+   "roman": "IVmaj7 – iii7 – ii7 – Imaj7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-043",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 04",
+   "mode": "major",
+   "roman": "Imaj7 – vi7 – ii7 – V7sus",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7sus",
+     "root": 7,
+     "quality": "7sus4",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-044",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 05",
+   "mode": "major",
+   "roman": "ii7 – V7sus – Imaj7 – vi7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7sus",
+     "root": 7,
+     "quality": "7sus4",
+     "beats": 4
+    },
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-045",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 06",
+   "mode": "major",
+   "roman": "Imaj7 – iii7 – vi7 – ii7 – V7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 2
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 2
+    }
+   ]
+  },
+  {
+   "id": "soul-046",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 07",
+   "mode": "major",
+   "roman": "IVmaj7 – IV/V – Imaj7",
+   "bars": 3,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    },
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-047",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 08",
+   "mode": "major",
+   "roman": "Imaj7 – ♭VIImaj7",
+   "bars": 2,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VIImaj7",
+     "root": 10,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-048",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 09",
+   "mode": "major",
+   "roman": "ii7 – IV/V",
+   "bars": 2,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    }
+   ]
+  },
+  {
+   "id": "soul-049",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 10",
+   "mode": "major",
+   "roman": "Imaj7 – I7 – IVmaj7 – iv6",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv6",
+     "root": 5,
+     "quality": "m6",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-050",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 11",
+   "mode": "major",
+   "roman": "iii7 – vi7 – ii7 – V7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-051",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 12",
+   "mode": "major",
+   "roman": "Imaj7 – IVmaj7 – iii7 – vi7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-052",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 13",
+   "mode": "major",
+   "roman": "IVmaj7 – V/IV – iii7 – vi7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "V/IV",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 5
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-053",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 14",
+   "mode": "minor",
+   "roman": "i7 – iv7 – ♭VII7 – ♭IIImaj7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII7",
+     "root": 10,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭IIImaj7",
+     "root": 3,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-054",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 15",
+   "mode": "minor",
+   "roman": "i9 – iv9",
+   "bars": 2,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i9",
+     "root": 0,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "iv9",
+     "root": 5,
+     "quality": "m9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-055",
+   "era": "Soul",
+   "style": "Philly Soul",
+   "name": "Philly Soul 16",
+   "mode": "minor",
+   "roman": "i7 – ♭VImaj7 – iiø7 – V7",
+   "bars": 4,
+   "tempo": [
+    84,
+    120
+   ],
+   "in_the_style_of": [
+    "The O'Jays",
+    "The Stylistics",
+    "The Delfonics",
+    "The Spinners",
+    "Harold Melvin & the Blue Notes"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iiø7",
+     "root": 2,
+     "quality": "m7b5",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-056",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 01",
+   "mode": "major",
+   "roman": "Imaj7 – vi7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-057",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 02",
+   "mode": "major",
+   "roman": "Imaj7 – vi7 – ii7 – IV/V",
+   "bars": 4,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    }
+   ]
+  },
+  {
+   "id": "soul-058",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 03",
+   "mode": "major",
+   "roman": "ii7 – iii7 – IVmaj7 – iii7",
+   "bars": 4,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-059",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 04",
+   "mode": "major",
+   "roman": "Imaj9 – IVmaj9",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj9",
+     "root": 0,
+     "quality": "maj9",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj9",
+     "root": 5,
+     "quality": "maj9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-060",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 05",
+   "mode": "major",
+   "roman": "IVmaj7 – iii7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-061",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 06",
+   "mode": "major",
+   "roman": "ii9 – V13",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii9",
+     "root": 2,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "V13",
+     "root": 7,
+     "quality": "13",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-062",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 07",
+   "mode": "major",
+   "roman": "Imaj7 – ii7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-063",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 08",
+   "mode": "major",
+   "roman": "IVmaj7 – iii7 – ii7 – IV/V",
+   "bars": 4,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    }
+   ]
+  },
+  {
+   "id": "soul-064",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 09",
+   "mode": "major",
+   "roman": "Imaj7 – iii7 – IVmaj7 – IV/V",
+   "bars": 4,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    }
+   ]
+  },
+  {
+   "id": "soul-065",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 10",
+   "mode": "major",
+   "roman": "I6 – IVmaj7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I6",
+     "root": 0,
+     "quality": "6",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-066",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 11",
+   "mode": "major",
+   "roman": "I – ii – iii – IV – IV – iii – ii – I",
+   "bars": 4,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "iii",
+     "root": 4,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "iii",
+     "root": 4,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "ii",
+     "root": 2,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2
+    }
+   ]
+  },
+  {
+   "id": "soul-067",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 12",
+   "mode": "major",
+   "roman": "Imaj7 – IV/V",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV/V",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4,
+     "bass": 7
+    }
+   ]
+  },
+  {
+   "id": "soul-068",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 13",
+   "mode": "minor",
+   "roman": "i7 – iv7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-069",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 14",
+   "mode": "minor",
+   "roman": "i7 – IV9",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV9",
+     "root": 5,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-070",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 15",
+   "mode": "minor",
+   "roman": "i9 – ♭VImaj7 – ♭VII",
+   "bars": 3,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i9",
+     "root": 0,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-071",
+   "era": "Soul",
+   "style": "70s Smooth Soul",
+   "name": "70s Smooth Soul 16",
+   "mode": "minor",
+   "roman": "i7 – v7",
+   "bars": 2,
+   "tempo": [
+    64,
+    100
+   ],
+   "in_the_style_of": [
+    "Marvin Gaye",
+    "Al Green",
+    "Bill Withers",
+    "The Isley Brothers",
+    "Minnie Riperton"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "v7",
+     "root": 7,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-072",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 01",
+   "mode": "major",
+   "roman": "I9",
+   "bars": 1,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I9",
+     "root": 0,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-073",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 02",
+   "mode": "major",
+   "roman": "I7#9",
+   "bars": 1,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7#9",
+     "root": 0,
+     "quality": "7#9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-074",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 03",
+   "mode": "major",
+   "roman": "I9 – IV9",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I9",
+     "root": 0,
+     "quality": "9",
+     "beats": 4
+    },
+    {
+     "symbol": "IV9",
+     "root": 5,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-075",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 04",
+   "mode": "major",
+   "roman": "I7 – ♭VII7",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII7",
+     "root": 10,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-076",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 05",
+   "mode": "major",
+   "roman": "I7 – ♭III7 – IV7",
+   "bars": 3,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭III7",
+     "root": 3,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-077",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 06",
+   "mode": "major",
+   "roman": "ii7 – V9",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V9",
+     "root": 7,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-078",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 07",
+   "mode": "major",
+   "roman": "IVmaj7 – iii7 – ii7 – iii7",
+   "bars": 4,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-079",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 08",
+   "mode": "major",
+   "roman": "Imaj7 – ii7 – iii7 – ii7",
+   "bars": 4,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-080",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 09",
+   "mode": "major",
+   "roman": "♭VImaj7 – ♭VII – I",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 2
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-081",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 10",
+   "mode": "major",
+   "roman": "I13 – IV13",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I13",
+     "root": 0,
+     "quality": "13",
+     "beats": 4
+    },
+    {
+     "symbol": "IV13",
+     "root": 5,
+     "quality": "13",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-082",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 11",
+   "mode": "minor",
+   "roman": "i7",
+   "bars": 1,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-083",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 12",
+   "mode": "minor",
+   "roman": "i7 – ♭VII7",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII7",
+     "root": 10,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-084",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 13",
+   "mode": "minor",
+   "roman": "i7 – ♭III – IV7",
+   "bars": 3,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭III",
+     "root": 3,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV7",
+     "root": 5,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-085",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 14",
+   "mode": "minor",
+   "roman": "i11 – IV13",
+   "bars": 2,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i11",
+     "root": 0,
+     "quality": "m11",
+     "beats": 4
+    },
+    {
+     "symbol": "IV13",
+     "root": 5,
+     "quality": "13",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-086",
+   "era": "Soul",
+   "style": "Funk",
+   "name": "Funk 15",
+   "mode": "minor",
+   "roman": "i7 – iv7 – v7",
+   "bars": 3,
+   "tempo": [
+    92,
+    120
+   ],
+   "in_the_style_of": [
+    "James Brown",
+    "Sly & the Family Stone",
+    "Parliament-Funkadelic",
+    "Earth, Wind & Fire",
+    "Ohio Players"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "v7",
+     "root": 7,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-087",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 01",
+   "mode": "major",
+   "roman": "Imaj7 – III7#5 – vi7 – II9",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "III7#5",
+     "root": 4,
+     "quality": "7#5",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "II9",
+     "root": 2,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-088",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 02",
+   "mode": "major",
+   "roman": "Imaj7 – ♭VIImaj7 – ♭VImaj7 – V7sus",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VIImaj7",
+     "root": 10,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7sus",
+     "root": 7,
+     "quality": "7sus4",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-089",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 03",
+   "mode": "major",
+   "roman": "ii9 – V13 – iii7 – VI7b9",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii9",
+     "root": 2,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "V13",
+     "root": 7,
+     "quality": "13",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "VI7b9",
+     "root": 9,
+     "quality": "7b9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-090",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 04",
+   "mode": "major",
+   "roman": "I – Iaug – I6 – I7 – IVmaj7 – iv6",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "I",
+     "root": 0,
+     "quality": "maj",
+     "beats": 2
+    },
+    {
+     "symbol": "Iaug",
+     "root": 0,
+     "quality": "aug",
+     "beats": 2
+    },
+    {
+     "symbol": "I6",
+     "root": 0,
+     "quality": "6",
+     "beats": 2
+    },
+    {
+     "symbol": "I7",
+     "root": 0,
+     "quality": "7",
+     "beats": 2
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv6",
+     "root": 5,
+     "quality": "m6",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-091",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 05",
+   "mode": "major",
+   "roman": "IVmaj7 – ♭VII9 – Imaj7",
+   "bars": 3,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII9",
+     "root": 10,
+     "quality": "9",
+     "beats": 4
+    },
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-092",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 06",
+   "mode": "major",
+   "roman": "Imaj7 – viiø7 – III7b9 – vi9 – II9",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj7",
+     "root": 0,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "viiø7",
+     "root": 11,
+     "quality": "m7b5",
+     "beats": 2
+    },
+    {
+     "symbol": "III7b9",
+     "root": 4,
+     "quality": "7b9",
+     "beats": 2
+    },
+    {
+     "symbol": "vi9",
+     "root": 9,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "II9",
+     "root": 2,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-093",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 07",
+   "mode": "major",
+   "roman": "ii9 – ♭II7 – Imaj9",
+   "bars": 3,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "ii9",
+     "root": 2,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "♭II7",
+     "root": 1,
+     "quality": "7",
+     "beats": 4
+    },
+    {
+     "symbol": "Imaj9",
+     "root": 0,
+     "quality": "maj9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-094",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 08",
+   "mode": "major",
+   "roman": "Imaj9 – ♭IIImaj7 – ♭VImaj7 – ♭IImaj7",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "Imaj9",
+     "root": 0,
+     "quality": "maj9",
+     "beats": 4
+    },
+    {
+     "symbol": "♭IIImaj7",
+     "root": 3,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "♭IImaj7",
+     "root": 1,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-095",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 09",
+   "mode": "major",
+   "roman": "vi9 – II13 – ii9 – V13",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "vi9",
+     "root": 9,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "II13",
+     "root": 2,
+     "quality": "13",
+     "beats": 4
+    },
+    {
+     "symbol": "ii9",
+     "root": 2,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "V13",
+     "root": 7,
+     "quality": "13",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-096",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 10",
+   "mode": "minor",
+   "roman": "i – imaj7 – i7 – i6 – iv7 – V7",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 2
+    },
+    {
+     "symbol": "imaj7",
+     "root": 0,
+     "quality": "mMaj7",
+     "beats": 2
+    },
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 2
+    },
+    {
+     "symbol": "i6",
+     "root": 0,
+     "quality": "m6",
+     "beats": 2
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7",
+     "root": 7,
+     "quality": "7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-097",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 11",
+   "mode": "minor",
+   "roman": "i9 – IV13 – ♭VImaj7 – V7#9",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i9",
+     "root": 0,
+     "quality": "m9",
+     "beats": 4
+    },
+    {
+     "symbol": "IV13",
+     "root": 5,
+     "quality": "13",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "V7#9",
+     "root": 7,
+     "quality": "7#9",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "soul-098",
+   "era": "Soul",
+   "style": "Jazz-Soul",
+   "name": "Jazz-Soul 12",
+   "mode": "minor",
+   "roman": "i7 – V7#9 – ♭VI9",
+   "bars": 4,
+   "tempo": [
+    70,
+    110
+   ],
+   "in_the_style_of": [
+    "Stevie Wonder",
+    "Donny Hathaway",
+    "Roberta Flack",
+    "Curtis Mayfield"
+   ],
+   "song_refs": [],
+   "chords": [
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 8
+    },
+    {
+     "symbol": "V7#9",
+     "root": 7,
+     "quality": "7#9",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VI9",
+     "root": 8,
+     "quality": "9",
+     "beats": 4
+    }
+   ]
+  },
   {
    "id": "80s-001",
    "era": "80s",
@@ -11860,6 +16095,63 @@
   {
    "id": "modern-015",
    "era": "Modern",
+   "style": "Moody Toronto",
+   "name": "Moody Toronto 15",
+   "mode": "minor",
+   "roman": "♭VImaj7 – v7 – i7 – iv7",
+   "bars": 4,
+   "tempo": [
+    60,
+    82
+   ],
+   "in_the_style_of": [
+    "Drake",
+    "PARTYNEXTDOOR",
+    "Majid Jordan",
+    "dvsn",
+    "The Weeknd"
+   ],
+   "song_refs": [
+    {
+     "title": "Die for You",
+     "artist": "The Weeknd",
+     "year": 2016,
+     "recorded_key": "C♯ minor",
+     "recorded_chords": "Amaj7 – G♯m7 – C♯m7 – F♯m7 (chorus)",
+     "match": "exact; from a simplified piano chart",
+     "source": "https://www.supersimplepiano.com/player/die-for-you-610193106449772080"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "♭VImaj7",
+     "root": 8,
+     "quality": "maj7",
+     "beats": 4
+    },
+    {
+     "symbol": "v7",
+     "root": 7,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "i7",
+     "root": 0,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iv7",
+     "root": 5,
+     "quality": "m7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-016",
+   "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 01",
    "mode": "minor",
@@ -11904,7 +16196,7 @@
    ]
   },
   {
-   "id": "modern-016",
+   "id": "modern-017",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 02",
@@ -11944,7 +16236,7 @@
    ]
   },
   {
-   "id": "modern-017",
+   "id": "modern-018",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 03",
@@ -11984,7 +16276,7 @@
    ]
   },
   {
-   "id": "modern-018",
+   "id": "modern-019",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 04",
@@ -12030,7 +16322,7 @@
    ]
   },
   {
-   "id": "modern-019",
+   "id": "modern-020",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 05",
@@ -12076,7 +16368,7 @@
    ]
   },
   {
-   "id": "modern-020",
+   "id": "modern-021",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 06",
@@ -12110,7 +16402,7 @@
    ]
   },
   {
-   "id": "modern-021",
+   "id": "modern-022",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 07",
@@ -12156,7 +16448,7 @@
    ]
   },
   {
-   "id": "modern-022",
+   "id": "modern-023",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 08",
@@ -12202,7 +16494,7 @@
    ]
   },
   {
-   "id": "modern-023",
+   "id": "modern-024",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 09",
@@ -12248,7 +16540,7 @@
    ]
   },
   {
-   "id": "modern-024",
+   "id": "modern-025",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 10",
@@ -12294,7 +16586,7 @@
    ]
   },
   {
-   "id": "modern-025",
+   "id": "modern-026",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 11",
@@ -12328,7 +16620,7 @@
    ]
   },
   {
-   "id": "modern-026",
+   "id": "modern-027",
    "era": "Modern",
    "style": "Trap-Soul",
    "name": "Trap-Soul 12",
@@ -12374,7 +16666,62 @@
    ]
   },
   {
-   "id": "modern-027",
+   "id": "modern-028",
+   "era": "Modern",
+   "style": "Trap-Soul",
+   "name": "Trap-Soul 13",
+   "mode": "minor",
+   "roman": "♭VI – i – ♭VII – ♭VI",
+   "bars": 4,
+   "tempo": [
+    54,
+    76
+   ],
+   "in_the_style_of": [
+    "Bryson Tiller",
+    "6LACK",
+    "Summer Walker",
+    "Jacquees"
+   ],
+   "song_refs": [
+    {
+     "title": "Nights Like This",
+     "artist": "Kehlani feat. Ty Dolla $ign",
+     "year": 2019,
+     "recorded_chords": "F – Am – G – F (as charted; the chart may be transposed)",
+     "match": "from a user chord chart; key centre read as the minor chord",
+     "source": "https://www.e-chords.com/fr/chords/kehlani/nights-like-this"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "♭VI",
+     "root": 8,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VI",
+     "root": 8,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-029",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 01",
@@ -12422,7 +16769,7 @@
    ]
   },
   {
-   "id": "modern-028",
+   "id": "modern-030",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 02",
@@ -12458,7 +16805,7 @@
    ]
   },
   {
-   "id": "modern-029",
+   "id": "modern-031",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 03",
@@ -12494,7 +16841,7 @@
    ]
   },
   {
-   "id": "modern-030",
+   "id": "modern-032",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 04",
@@ -12542,7 +16889,7 @@
    ]
   },
   {
-   "id": "modern-031",
+   "id": "modern-033",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 05",
@@ -12584,7 +16931,7 @@
    ]
   },
   {
-   "id": "modern-032",
+   "id": "modern-034",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 06",
@@ -12632,7 +16979,7 @@
    ]
   },
   {
-   "id": "modern-033",
+   "id": "modern-035",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 07",
@@ -12680,7 +17027,7 @@
    ]
   },
   {
-   "id": "modern-034",
+   "id": "modern-036",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 08",
@@ -12728,7 +17075,7 @@
    ]
   },
   {
-   "id": "modern-035",
+   "id": "modern-037",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 09",
@@ -12776,7 +17123,7 @@
    ]
   },
   {
-   "id": "modern-036",
+   "id": "modern-038",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 10",
@@ -12825,7 +17172,7 @@
    ]
   },
   {
-   "id": "modern-037",
+   "id": "modern-039",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 11",
@@ -12873,7 +17220,7 @@
    ]
   },
   {
-   "id": "modern-038",
+   "id": "modern-040",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 12",
@@ -12909,7 +17256,7 @@
    ]
   },
   {
-   "id": "modern-039",
+   "id": "modern-041",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 13",
@@ -12958,7 +17305,7 @@
    ]
   },
   {
-   "id": "modern-040",
+   "id": "modern-042",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 14",
@@ -13006,7 +17353,7 @@
    ]
   },
   {
-   "id": "modern-041",
+   "id": "modern-043",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 15",
@@ -13055,7 +17402,7 @@
    ]
   },
   {
-   "id": "modern-042",
+   "id": "modern-044",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 16",
@@ -13103,7 +17450,7 @@
    ]
   },
   {
-   "id": "modern-043",
+   "id": "modern-045",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 17",
@@ -13151,7 +17498,7 @@
    ]
   },
   {
-   "id": "modern-044",
+   "id": "modern-046",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 18",
@@ -13209,7 +17556,7 @@
    ]
   },
   {
-   "id": "modern-045",
+   "id": "modern-047",
    "era": "Modern",
    "style": "Alt-R&B",
    "name": "Alt-R&B 19",
@@ -13267,7 +17614,59 @@
    ]
   },
   {
-   "id": "modern-046",
+   "id": "modern-048",
+   "era": "Modern",
+   "style": "Alt-R&B",
+   "name": "Alt-R&B 20",
+   "mode": "major",
+   "roman": "ii7 – iii7 – IVmaj7",
+   "bars": 3,
+   "tempo": [
+    64,
+    92
+   ],
+   "in_the_style_of": [
+    "SZA",
+    "Frank Ocean",
+    "Daniel Caesar",
+    "Steve Lacy",
+    "Brent Faiyaz",
+    "Kehlani"
+   ],
+   "song_refs": [
+    {
+     "title": "Snooze",
+     "artist": "SZA",
+     "year": 2022,
+     "recorded_key": "C major / F Lydian",
+     "recorded_chords": "Dm7 – Em7 – Fmaj7",
+     "match": "exact",
+     "source": "https://www.e-chords.com/chords/sza/snooze"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IVmaj7",
+     "root": 5,
+     "quality": "maj7",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-049",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 01",
@@ -13302,7 +17701,7 @@
    ]
   },
   {
-   "id": "modern-047",
+   "id": "modern-050",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 02",
@@ -13349,7 +17748,7 @@
    ]
   },
   {
-   "id": "modern-048",
+   "id": "modern-051",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 03",
@@ -13384,7 +17783,7 @@
    ]
   },
   {
-   "id": "modern-049",
+   "id": "modern-052",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 04",
@@ -13419,7 +17818,7 @@
    ]
   },
   {
-   "id": "modern-050",
+   "id": "modern-053",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 05",
@@ -13454,7 +17853,7 @@
    ]
   },
   {
-   "id": "modern-051",
+   "id": "modern-054",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 06",
@@ -13501,7 +17900,7 @@
    ]
   },
   {
-   "id": "modern-052",
+   "id": "modern-055",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 07",
@@ -13548,7 +17947,7 @@
    ]
   },
   {
-   "id": "modern-053",
+   "id": "modern-056",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 08",
@@ -13595,7 +17994,7 @@
    ]
   },
   {
-   "id": "modern-054",
+   "id": "modern-057",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 09",
@@ -13654,7 +18053,7 @@
    ]
   },
   {
-   "id": "modern-055",
+   "id": "modern-058",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 10",
@@ -13701,7 +18100,7 @@
    ]
   },
   {
-   "id": "modern-056",
+   "id": "modern-059",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 11",
@@ -13748,7 +18147,7 @@
    ]
   },
   {
-   "id": "modern-057",
+   "id": "modern-060",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 12",
@@ -13789,7 +18188,7 @@
    ]
   },
   {
-   "id": "modern-058",
+   "id": "modern-061",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 13",
@@ -13836,7 +18235,7 @@
    ]
   },
   {
-   "id": "modern-059",
+   "id": "modern-062",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 14",
@@ -13883,7 +18282,7 @@
    ]
   },
   {
-   "id": "modern-060",
+   "id": "modern-063",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 15",
@@ -13930,7 +18329,7 @@
    ]
   },
   {
-   "id": "modern-061",
+   "id": "modern-064",
    "era": "Modern",
    "style": "Bounce & House R&B",
    "name": "Bounce & House R&B 16",
@@ -13977,7 +18376,7 @@
    ]
   },
   {
-   "id": "modern-062",
+   "id": "modern-065",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 01",
@@ -14031,7 +18430,7 @@
    ]
   },
   {
-   "id": "modern-063",
+   "id": "modern-066",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 02",
@@ -14095,7 +18494,7 @@
    ]
   },
   {
-   "id": "modern-064",
+   "id": "modern-067",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 03",
@@ -14143,7 +18542,7 @@
    ]
   },
   {
-   "id": "modern-065",
+   "id": "modern-068",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 04",
@@ -14209,7 +18608,7 @@
    ]
   },
   {
-   "id": "modern-066",
+   "id": "modern-069",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 05",
@@ -14251,7 +18650,7 @@
    ]
   },
   {
-   "id": "modern-067",
+   "id": "modern-070",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 06",
@@ -14299,7 +18698,7 @@
    ]
   },
   {
-   "id": "modern-068",
+   "id": "modern-071",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 07",
@@ -14359,7 +18758,7 @@
    ]
   },
   {
-   "id": "modern-069",
+   "id": "modern-072",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 08",
@@ -14407,7 +18806,7 @@
    ]
   },
   {
-   "id": "modern-070",
+   "id": "modern-073",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 09",
@@ -14455,7 +18854,7 @@
    ]
   },
   {
-   "id": "modern-071",
+   "id": "modern-074",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 10",
@@ -14503,7 +18902,7 @@
    ]
   },
   {
-   "id": "modern-072",
+   "id": "modern-075",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 11",
@@ -14551,7 +18950,7 @@
    ]
   },
   {
-   "id": "modern-073",
+   "id": "modern-076",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 12",
@@ -14599,7 +18998,7 @@
    ]
   },
   {
-   "id": "modern-074",
+   "id": "modern-077",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 13",
@@ -14665,7 +19064,7 @@
    ]
   },
   {
-   "id": "modern-075",
+   "id": "modern-078",
    "era": "Modern",
    "style": "Modern Neo-Soul",
    "name": "Modern Neo-Soul 14",
@@ -14713,7 +19112,7 @@
    ]
   },
   {
-   "id": "modern-076",
+   "id": "modern-079",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 01",
@@ -14776,7 +19175,7 @@
    ]
   },
   {
-   "id": "modern-077",
+   "id": "modern-080",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 02",
@@ -14823,7 +19222,7 @@
    ]
   },
   {
-   "id": "modern-078",
+   "id": "modern-081",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 03",
@@ -14870,7 +19269,7 @@
    ]
   },
   {
-   "id": "modern-079",
+   "id": "modern-082",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 04",
@@ -14917,7 +19316,7 @@
    ]
   },
   {
-   "id": "modern-080",
+   "id": "modern-083",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 05",
@@ -14958,7 +19357,7 @@
    ]
   },
   {
-   "id": "modern-081",
+   "id": "modern-084",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 06",
@@ -14999,7 +19398,7 @@
    ]
   },
   {
-   "id": "modern-082",
+   "id": "modern-085",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 07",
@@ -15046,7 +19445,7 @@
    ]
   },
   {
-   "id": "modern-083",
+   "id": "modern-086",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 08",
@@ -15093,7 +19492,7 @@
    ]
   },
   {
-   "id": "modern-084",
+   "id": "modern-087",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 09",
@@ -15140,7 +19539,7 @@
    ]
   },
   {
-   "id": "modern-085",
+   "id": "modern-088",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 10",
@@ -15187,7 +19586,7 @@
    ]
   },
   {
-   "id": "modern-086",
+   "id": "modern-089",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 11",
@@ -15228,7 +19627,7 @@
    ]
   },
   {
-   "id": "modern-087",
+   "id": "modern-090",
    "era": "Modern",
    "style": "Afro & Pop-R&B",
    "name": "Afro & Pop-R&B 12",
@@ -15269,7 +19668,178 @@
    ]
   },
   {
-   "id": "modern-088",
+   "id": "modern-091",
+   "era": "Modern",
+   "style": "Afro & Pop-R&B",
+   "name": "Afro & Pop-R&B 13",
+   "mode": "minor",
+   "roman": "i – v – ♭VII – IV",
+   "bars": 4,
+   "tempo": [
+    90,
+    112
+   ],
+   "in_the_style_of": [
+    "Drake",
+    "Rihanna",
+    "Chris Brown",
+    "Ella Mai",
+    "Tems"
+   ],
+   "song_refs": [
+    {
+     "title": "Blinding Lights",
+     "artist": "The Weeknd",
+     "year": 2019,
+     "recorded_key": "F minor",
+     "recorded_chords": "Fm – Cm – E♭ – B♭",
+     "match": "exact",
+     "source": "https://notetracks.com/blog/behind-the-track-the-weeknds-blinding-lights-production-and-arrangement-breakdown"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "i",
+     "root": 0,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "v",
+     "root": 7,
+     "quality": "m",
+     "beats": 4
+    },
+    {
+     "symbol": "♭VII",
+     "root": 10,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-092",
+   "era": "Modern",
+   "style": "Afro & Pop-R&B",
+   "name": "Afro & Pop-R&B 14",
+   "mode": "major",
+   "roman": "ii7 – IV – vi7 – V",
+   "bars": 4,
+   "tempo": [
+    90,
+    112
+   ],
+   "in_the_style_of": [
+    "Drake",
+    "Rihanna",
+    "Chris Brown",
+    "Ella Mai",
+    "Tems"
+   ],
+   "song_refs": [
+    {
+     "title": "Hold On, We're Going Home",
+     "artist": "Drake feat. Majid Jordan",
+     "year": 2013,
+     "recorded_key": "A major",
+     "recorded_chords": "Bm – D – F♯m – E",
+     "match": "chord charts differ on the third chord (some give A)",
+     "source": "https://ukutabs.com/d/drake/hold-going-home"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "IV",
+     "root": 5,
+     "quality": "maj",
+     "beats": 4
+    },
+    {
+     "symbol": "vi7",
+     "root": 9,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-093",
+   "era": "Modern",
+   "style": "Afro & Pop-R&B",
+   "name": "Afro & Pop-R&B 15",
+   "mode": "major",
+   "roman": "IV6 – ii7 – iii7 – V",
+   "bars": 4,
+   "tempo": [
+    90,
+    112
+   ],
+   "in_the_style_of": [
+    "Drake",
+    "Rihanna",
+    "Chris Brown",
+    "Ella Mai",
+    "Tems"
+   ],
+   "song_refs": [
+    {
+     "title": "Passionfruit",
+     "artist": "Drake",
+     "year": 2017,
+     "recorded_key": "B major",
+     "recorded_chords": "E6 – C♯m7 – D♯m7 – F♯",
+     "match": "from a user chord chart; other charts differ",
+     "source": "https://www.cifraclub.com/drake/passionfruit/smwjswm.html"
+    }
+   ],
+   "chords": [
+    {
+     "symbol": "IV6",
+     "root": 5,
+     "quality": "6",
+     "beats": 4
+    },
+    {
+     "symbol": "ii7",
+     "root": 2,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "iii7",
+     "root": 4,
+     "quality": "m7",
+     "beats": 4
+    },
+    {
+     "symbol": "V",
+     "root": 7,
+     "quality": "maj",
+     "beats": 4
+    }
+   ]
+  },
+  {
+   "id": "modern-094",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 01",
@@ -15317,7 +19887,7 @@
    ]
   },
   {
-   "id": "modern-089",
+   "id": "modern-095",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 02",
@@ -15365,7 +19935,7 @@
    ]
   },
   {
-   "id": "modern-090",
+   "id": "modern-096",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 03",
@@ -15413,7 +19983,7 @@
    ]
   },
   {
-   "id": "modern-091",
+   "id": "modern-097",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 04",
@@ -15461,7 +20031,7 @@
    ]
   },
   {
-   "id": "modern-092",
+   "id": "modern-098",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 05",
@@ -15514,7 +20084,7 @@
    ]
   },
   {
-   "id": "modern-093",
+   "id": "modern-099",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 06",
@@ -15575,7 +20145,7 @@
    ]
   },
   {
-   "id": "modern-094",
+   "id": "modern-100",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 07",
@@ -15622,7 +20192,7 @@
    ]
   },
   {
-   "id": "modern-095",
+   "id": "modern-101",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 08",
@@ -15676,7 +20246,7 @@
    ]
   },
   {
-   "id": "modern-096",
+   "id": "modern-102",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 09",
@@ -15725,7 +20295,7 @@
    ]
   },
   {
-   "id": "modern-097",
+   "id": "modern-103",
    "era": "Modern",
    "style": "90s Throwback",
    "name": "90s Throwback 10",

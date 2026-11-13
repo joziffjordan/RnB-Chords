@@ -10,15 +10,16 @@ class GlossButton : public juce::Button
 {
 public:
     enum Icon { none, prev, play, stop, next, loop };
-    GlossButton (const Theme& t, const juce::String& buttonText, Icon i = none, bool pill = false)
-        : juce::Button (buttonText), theme (t), label (buttonText), icon (i), isPill (pill) {}
+    enum Shape { orb, toggle, capsule };
+    GlossButton (const Theme& t, const juce::String& buttonText, Icon i = none, Shape shapeToUse = orb)
+        : juce::Button (buttonText), theme (t), label (buttonText), icon (i), shape (shapeToUse) {}
     void paintButton (juce::Graphics&, bool, bool) override;
     void setIcon (Icon i)                 { if (icon != i) { icon = i; repaint(); } }
     void setLabel (const juce::String& s) { if (label != s) { label = s; repaint(); } }
     bool lit = false;
     float fontSize = 22.0f;
 private:
-    const Theme& theme; juce::String label; Icon icon; bool isPill;
+    const Theme& theme; juce::String label; Icon icon; Shape shape;
 };
 
 // The chord pads for the progression that is loaded.
@@ -32,6 +33,7 @@ public:
     int active = -1;
 private:
     juce::Rectangle<float> padBounds (int index, int count) const;
+    juce::Rectangle<float> arrowBounds (juce::Rectangle<float> pad, bool right) const;
     RnBChordsProcessor& proc; const Theme& theme; int pressed = -1;
 };
 
@@ -108,10 +110,14 @@ private:
     Theme theme;
     GlossLookAndFeel lnf { theme };
 
-    GlossButton era80 { theme, "80s" }, era90 { theme, "90s" }, era00 { theme, "00s" }, eraNow { theme, "Now" };
+    GlossButton eraSoul { theme, "Soul", GlossButton::none, GlossButton::capsule }, era80 { theme, "80s", GlossButton::none, GlossButton::capsule },
+                era90 { theme, "90s", GlossButton::none, GlossButton::capsule }, era00 { theme, "2000s", GlossButton::none, GlossButton::capsule },
+                eraNow { theme, "Now", GlossButton::none, GlossButton::capsule };
+    GlossButton voiceRoot { theme, "Root", GlossButton::none, GlossButton::capsule }, voiceClosest { theme, "Closest", GlossButton::none, GlossButton::capsule },
+                voiceInv { theme, "Inversion", GlossButton::none, GlossButton::capsule };
     GlossButton prevBtn { theme, "Previous", GlossButton::prev }, playBtn { theme, "Play", GlossButton::play },
                 nextBtn { theme, "Next", GlossButton::next }, loopBtn { theme, "Loop", GlossButton::loop };
-    GlossButton triggerBtn { theme, "MIDI Trigger", GlossButton::none, true };
+    GlossButton triggerBtn { theme, "MIDI Trigger", GlossButton::none, GlossButton::toggle };
     juce::ListBox list;
     PadStrip pads { proc, theme };
     KeyStrip keys { proc, theme };
@@ -124,7 +130,7 @@ private:
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> keyAtt;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> triggerAtt;
 
-    int shownEra = -1, shownProg = -1;
+    int shownEra = -1, shownProg = -1, shownVoicing = -1;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RnBChordsEditor)
 };

@@ -41,6 +41,12 @@ public:
     int playingChord() const                { return uiChord.load(); }
     int triggeredPitchClass() const         { return uiTriggerPc.load(); }
     void auditionChord (int chordIndex, bool on);
+    int getVoicingMode() const;
+    void setVoicingMode (int mode);
+    int getChordInversion (int chord) const          { return chordInv[juce::jlimit (0, ChordDatabase::maxChords - 1, chord)].load(); }
+    void setChordInversion (int chord, int inversion);
+    void resetInversions();
+    int voiceCurrent (Voiced* out) const;             // voices the loaded progression with the current settings
     void keyboardClick (int pitchClass, bool on);
     juce::File writeMidiFile() const;
 
@@ -60,6 +66,9 @@ private:
 
     std::atomic<bool> playing { false };
     std::atomic<int> progIndex { 0 }, uiChord { -1 }, uiTriggerPc { -1 };
+    std::atomic<int> chordInv[ChordDatabase::maxChords];
+    int auditionNotes[8] {}; int auditionCount = 0;   // message thread only
+    Voiced lastTrigger; int lastTriggerShift = 0;      // audio thread only
 
     // sequencer state (audio thread only)
     bool wasPlaying = false;

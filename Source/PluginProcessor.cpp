@@ -68,7 +68,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout RnBChordsProcessor::createLa
 {
     using namespace juce;
     AudioProcessorValueTreeState::ParameterLayout layout;
-    layout.add (std::make_unique<AudioParameterChoice> (ParameterID { "era", 1 }, "Era", StringArray { "80s", "90s", "2000s", "Modern" }, 3));
+    layout.add (std::make_unique<AudioParameterChoice> (ParameterID { "era", 1 }, "Era", StringArray { "Soul", "80s", "90s", "2000s", "Modern" }, 4));
+    layout.add (std::make_unique<AudioParameterChoice> (ParameterID { "voicing", 1 }, "Voicing", StringArray { "Root", "Closest", "Inversion" }, 1));
     layout.add (std::make_unique<AudioParameterChoice> (ParameterID { "key", 1 }, "Key",
                 StringArray { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" }, 0));
     layout.add (std::make_unique<AudioParameterFloat> (ParameterID { "tempo", 1 }, "Tempo", NormalisableRange<float> (50.0f, 160.0f, 1.0f), 92.0f));
@@ -82,6 +83,7 @@ RnBChordsProcessor::RnBChordsProcessor()
     : AudioProcessor (BusesProperties().withOutput ("Output", juce::AudioChannelSet::stereo(), true)),
       apvts (*this, nullptr, "state", createLayout())
 {
+    for (auto& v : chordInv) v.store (0);
     for (int i = 0; i < 32; ++i) synth.addVoice (new EPVoice());
     synth.addSound (new EPSound());
 }
@@ -100,6 +102,36 @@ void RnBChordsProcessor::prepareToPlay (double sampleRate, int)
     wasPlaying = false; seqChord = -1; seqNoteCount = 0; samplesUntilNext = 0.0;
     for (auto& p : pending) p.active = false;
     for (auto& c : heldCount) c = 0;
+    lastTrigger = {};
+}
+
+int RnBChordsProcessor::getVoicingMode() const { return juce::roundToInt (apvts.getRawParameterValue ("voicing")->load()); }
+
+void RnBChordsProcessor::setVoicingMode (int mode)
+{
+    if (auto* p = apvts.getParameter ("voicing"))
+    {
+        p->beginChangeGesture();
+        p->setValueNotifyingHost (p->convertTo0to1 ((float) mode));
+        p->endChangeGesture();
+    }
+}
+
+void RnBChordsProcessor::setChordInversion (int chord, int inversion)
+{
+    if (chord >= 0 && chord < ChordDatabase::maxChords) chordInv[chord].store (juce::jmax (0, inversion));
+}
+
+void RnBChordsProcessor::resetInversions()
+{
+    for (auto& v : chordInv) v.store (0);
+}
+
+int RnBChordsProcessor::voiceCurrent (Voiced* out) const
+{
+    int invs[ChordDatabase::maxChords];
+    for (int i = 0; i < ChordDatabase::maxChords; ++i) invs[i] = chordInv[i].load();
+    return db.voiceProgression (currentProg(), getKey(), getVoicingMode(), invs, out, ChordDatabase::maxChords);
 }
 
 int RnBChordsProcessor::getEra() const { return juce::roundToInt (apvts.getRawParameterValue ("era")->load()); }
@@ -114,31 +146,43 @@ void RnBChordsProcessor::setEra (int era)
         p->endChangeGesture();
     }
     progIndex.store (0);
+    resetInversions();
 }
 
 void RnBChordsProcessor::setProgIndex (int index)
 {
     const int n = db.numInEra (getEra());
-    if (n > 0) progIndex.store (((index % n) + n) % n);
+    if (n <= 0) return;
+    const int wrapped = ((index % n) + n) % n;
+    if (wrapped != progIndex.load()) resetInversions();   // inversions belong to one progression
+    progIndex.store (wrapped);
 }
 
 void RnBChordsProcessor::stepProg (int delta) { setProgIndex (progIndex.load() + delta); }
 
 void RnBChordsProcessor::auditionChord (int chordIndex, bool on)
 {
-    auto& prog = currentProg();
-    if (chordIndex < 0 || chordIndex >= (int) prog.chords.size()) return;
-    auto& c = prog.chords[(size_t) chordIndex];
-    int notes[8];
-    const int n = db.buildChord (getKey(), c.root, c.quality, c.bass, notes, 8);
     const double now = juce::Time::getMillisecondCounterHiRes() * 0.001;
-    for (int i = 0; i < n; ++i)
+    auto send = [&] (bool noteOn)
     {
-        auto m = on ? juce::MidiMessage::noteOn (directChannel, notes[i], chordVelocity)
-                    : juce::MidiMessage::noteOff (directChannel, notes[i]);
-        m.setTimeStamp (now);
-        uiMidi.addMessageToQueue (m);
-    }
+        for (int i = 0; i < auditionCount; ++i)
+        {
+            auto m = noteOn ? juce::MidiMessage::noteOn (directChannel, auditionNotes[i], chordVelocity)
+                            : juce::MidiMessage::noteOff (directChannel, auditionNotes[i]);
+            m.setTimeStamp (now);
+            uiMidi.addMessageToQueue (m);
+        }
+    };
+
+    if (! on) { send (false); auditionCount = 0; return; }
+
+    Voiced voiced[ChordDatabase::maxChords];
+    const int total = voiceCurrent (voiced);
+    if (chordIndex < 0 || chordIndex >= total) return;
+    send (false);
+    auditionCount = voiced[chordIndex].count;
+    std::copy (voiced[chordIndex].notes, voiced[chordIndex].notes + auditionCount, auditionNotes);
+    send (true);
 }
 
 void RnBChordsProcessor::keyboardClick (int pitchClass, bool on)
@@ -163,13 +207,16 @@ void RnBChordsProcessor::handleTrigger (const juce::MidiMessage& m, int pos, juc
         juce::String quality = "maj";
         for (int i = 0; i < 7; ++i) if (whitePc[i] == pc) quality = db.whiteQuality[era][i];
         for (int i = 0; i < 5; ++i) if (blackPc[i] == pc) quality = db.blackQuality[era][i];
-        int notes[8];
-        const int n = db.buildChord (getKey(), pc, quality, -1, notes, 8);
         const int shift = (note / 12 - 5) * 12;
+        // "closest" follows the last chord you played, unless you have moved to another octave
+        const bool closest = getVoicingMode() == voicingClosest && shift == lastTriggerShift;
+        lastTriggerShift = shift;
+        const auto voiced = db.voiceChord (getKey(), pc, quality, -1, closest ? -1 : 0, closest ? &lastTrigger : nullptr, shift);
+        lastTrigger = voiced;
         int count = 0;
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < voiced.count; ++i)
         {
-            const int v = notes[i] + shift;
+            const int v = voiced.notes[i];
             if (v < 0 || v > 127) continue;
             heldNotes[note][count++] = v;
             out.addEvent (juce::MidiMessage::noteOn (1, v, m.getFloatVelocity()), pos);
@@ -241,8 +288,12 @@ void RnBChordsProcessor::runSequencer (int numSamples, juce::MidiBuffer& out)
             seqChord = 0;
         }
 
-        auto& c = chords[(size_t) seqChord];
-        seqNoteCount = db.buildChord (getKey(), c.root, c.quality, c.bass, seqNotes, 8);
+        auto& c = chords[(size_t) juce::jmin (seqChord, (int) chords.size() - 1)];
+        Voiced voiced[ChordDatabase::maxChords];
+        const int total = voiceCurrent (voiced);
+        const auto& v = voiced[juce::jlimit (0, juce::jmax (0, total - 1), seqChord)];
+        seqNoteCount = v.count;
+        std::copy (v.notes, v.notes + v.count, seqNotes);
         for (int i = 0; i < seqNoteCount; ++i)
         {
             const int at = pos + i * strumStep;
@@ -300,16 +351,16 @@ juce::File RnBChordsProcessor::writeMidiFile() const
     const double bpm = apvts.getRawParameterValue ("tempo")->load();
     seq.addEvent (juce::MidiMessage::tempoMetaEvent ((int) (60000000.0 / juce::jmax (20.0, bpm))), 0.0);
 
+    Voiced voiced[ChordDatabase::maxChords];
+    const int total = voiceCurrent (voiced);
     double t = 0.0;
-    for (auto& c : prog.chords)
+    for (int ci = 0; ci < total; ++ci)
     {
-        int notes[8];
-        const int n = db.buildChord (getKey(), c.root, c.quality, c.bass, notes, 8);
-        const double len = c.beats * ppq;
-        for (int i = 0; i < n; ++i)
+        const double len = prog.chords[(size_t) ci].beats * ppq;
+        for (int i = 0; i < voiced[ci].count; ++i)
         {
-            seq.addEvent (juce::MidiMessage::noteOn (1, notes[i], (juce::uint8) 92), t);
-            seq.addEvent (juce::MidiMessage::noteOff (1, notes[i]), t + len - 1.0);
+            seq.addEvent (juce::MidiMessage::noteOn (1, voiced[ci].notes[i], (juce::uint8) 92), t);
+            seq.addEvent (juce::MidiMessage::noteOff (1, voiced[ci].notes[i]), t + len - 1.0);
         }
         t += len;
     }
@@ -332,6 +383,9 @@ void RnBChordsProcessor::getStateInformation (juce::MemoryBlock& dest)
     auto state = apvts.copyState();
     state.setProperty ("progIndex", progIndex.load(), nullptr);
     state.setProperty ("loop", loopOn.load(), nullptr);
+    juce::StringArray invs;
+    for (auto& v : chordInv) invs.add (juce::String (v.load()));
+    state.setProperty ("inversions", invs.joinIntoString (","), nullptr);
     if (auto xml = state.createXml()) copyXmlToBinary (*xml, dest);
 }
 
@@ -345,6 +399,9 @@ void RnBChordsProcessor::setStateInformation (const void* data, int size)
             apvts.replaceState (state);
             setProgIndex ((int) state.getProperty ("progIndex", 0));
             loopOn.store ((bool) state.getProperty ("loop", true));
+            auto invs = juce::StringArray::fromTokens (state.getProperty ("inversions", "").toString(), ",", "");
+            for (int i = 0; i < ChordDatabase::maxChords; ++i)
+                chordInv[i].store (i < invs.size() ? juce::jmax (0, invs[i].getIntValue()) : 0);
         }
     }
 }
