@@ -1,0 +1,64 @@
+name: Build RnB Chords
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      # Mac: sign the plugins, add an installer script, and zip everything with
+      # ditto so the files keep their "executable" permission. (A plain artifact
+      # upload strips that permission, and the DAW then cannot load the plugin.)
+      - name: Package (Mac)
+        if: runner.os == 'macOS'
+        run: |
+          cd build/RnBChords_artefacts/Release
+          mkdir "RnB Chords Mac"
+          cp -R "VST3/RnB Chords.vst3" "AU/RnB Chords.component" "Standalone/RnB Chords.app" "RnB Chords Mac/"
+          for item in "RnB Chords.vst3" "RnB Chords.component" "RnB Chords.app"; do
+            codesign --force --deep --sign - "RnB Chords Mac/$item"
+          done
+          cat > "RnB Chords Mac/Install on Mac.command" <<'INSTALLER'
+          #!/bin/bash
+          # Installs RnB Chords for the current user and clears the macOS download block.
+          cd "$(dirname "$0")" || exit 1
+          VST3="$HOME/Library/Audio/Plug-Ins/VST3"
+          AU="$HOME/Library/Audio/Plug-Ins/Components"
+          mkdir -p "$VST3" "$AU"
+          rm -rf "$VST3/RnB Chords.vst3" "$AU/RnB Chords.component"
+          cp -R "RnB Chords.vst3" "$VST3/"
+          cp -R "RnB Chords.component" "$AU/"
+          for item in "$VST3/RnB Chords.vst3" "$AU/RnB Chords.component"; do
+            xattr -cr "$item"
+            chmod +x "$item"/Contents/MacOS/*
+            codesign --force --deep --sign - "$item"
+          done
+          killall -9 AudioComponentRegistrar 2>/dev/null
+          echo ""
+          echo "RnB Chords is installed. Open your DAW and rescan plug-ins."
+          INSTALLER
+          chmod +x "RnB Chords Mac/Install on Mac.command"
+          ditto -c -k --keepParent "RnB Chords Mac" "$GITHUB_WORKSPACE/RnB-Chords-Mac.zip"
+      - name: Upload (Mac)
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v4
+        with:
+          name: RnB-Chords-Mac
+          path: RnB-Chords-Mac.zip
+
+      - name: Upload (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: RnB-Chords-Windows
+          path: |
+            build/RnBChords_artefacts/Release/VST3
+            build/RnBChords_artefacts/Release/Standalone
